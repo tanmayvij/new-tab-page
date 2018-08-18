@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>New Tab</title>
+		<link rel="stylesheet" href="styles.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			function startTime()
+			{
+				var today=new Date();
+				var h=today.getHours();
+				var m=today.getMinutes();
+				var s=today.getSeconds();
+				var d=today.getDate();
+				var m=today.getMonth();
+				var y=today.getFullYear();
+				m=checkTime(m);
+				s=checkTime(s);
+				document.getElementById('time').innerHTML=h+":"+m+":"+s+" | "+d+"-"+m+"-"+y;
+				t=setTimeout(function(){startTime()},500);
+			}
+			
+			function checkTime(i)
+			{
+				if (i<10)
+				  {
+					  i="0" + i;
+			  	  }
+				return i;
+			}
+			
+			$.get("http://ip-api.com/json", function(response) {
+				$("#country").text(response.region + ", " + response.country);
+				}, "jsonp");
+			$(document).ready(function(){
+				 $("#theme").click(function(){
+				 	var bg = Math.floor(Math.random() * 5) + 1;
+				 	 $("body").css("background", "url('img/bg" + bg +".jpg')");
+				 });
+			});
+		</script>
+	
+	</head>
+	<body onload="startTime()">
+		<button id="theme">Change Theme</button>
+		<div id="location">
+			<img src="img/pin.png">
+			<span id="country"></span>
+		</div>
+		<div align="center" id="search">
+			<form method="get" action="" onsubmit="this.setAttribute('action', 'https://www.google.com/search')" target="_blank">
+				<input type="text" id="search_bar" name="q" />
+			</form>
+		</div>
+		<div align="center" id="links">
+			<a href="https://www.google.com" target="_blank"><img src="img/gsearch.png" onmouseover="this.setAttribute('src', 'img/gsearch_w.png')" onmouseout="this.setAttribute('src', 'img/gsearch.png')"></a>
+			<a href="https://www.gmail.com" target="_blank"><img src="img/gmail.png" onmouseover="this.setAttribute('src', 'img/gmail_w.png')" onmouseout="this.setAttribute('src', 'img/gmail.png')"></a>
+			<a href="https://drive.google.com" target="_blank"><img src="img/drive.png" onmouseover="this.setAttribute('src', 'img/drive_w.png')" onmouseout="this.setAttribute('src', 'img/drive.png')"></a>
+			<a href="https://www.youtube.com" target="_blank"><img src="img/youtube.png" onmouseover="this.setAttribute('src', 'img/youtube_w.png')" onmouseout="this.setAttribute('src', 'img/youtube.png')"></a><br><br><br>
+			<a href="https://www.facebook.com" target="_blank"><img src="img/facebook.png" onmouseover="this.setAttribute('src', 'img/facebook_w.png')" onmouseout="this.setAttribute('src', 'img/facebook.png')"></a>
+			<a href="https://www.twitter.com" target="_blank"><img src="img/twitter.png" onmouseover="this.setAttribute('src', 'img/twitter_w.png')" onmouseout="this.setAttribute('src', 'img/twitter.png')"></a>
+			<a href="https://en.wikipedia.org" target="_blank"><img src="img/wikipedia.png" onmouseover="this.setAttribute('src', 'img/wikipedia_w.png')" onmouseout="this.setAttribute('src', 'img/wikipedia.png')"></a>
+			<a href="https://www.amazon.com" target="_blank"><img src="img/amazon.png" onmouseover="this.setAttribute('src', 'img/amazon_w.png')" onmouseout="this.setAttribute('src', 'img/amazon.png')"></a>
+		</div>
+		<div id="time"></div>
+	</body>
+</html>

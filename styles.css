@@ -1,0 +1,92 @@
+body
+{
+	background: url('img/bg1.jpg');
+	overflow: hidden;
+	background-size: 100%;
+}
+#time
+{
+	position: absolute;
+	bottom: 5px;
+	text-align: center;
+	width: 100%;
+	color: #000000;
+	font-size: 100px;
+	font-weight: 900;
+	font-family: 'Montserrat', sans-serif;
+	
+}
+#search
+{
+	width: 100%;
+	margin-top: 200px;
+}
+#search_bar
+{
+	color: #FFFFFF;
+	font-weight: bold;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	border-radius: 50px;
+	width: 600px;
+	height: 50px;
+	background: url('img/google.png') no-repeat scroll 7px 7px;
+	padding-left: 50px;
+	outline: none;
+	transition:0.5s;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	-o-transition:0.5s;
+	border:1px solid #FFFFFF;
+}
+#search_bar:focus
+{
+	box-shadow: 2px 2px 2px 2px #fff;
+}
+#links
+{
+	margin-top: 50px;
+}
+#links a
+{
+	padding: 50px 50px 50px 50px;
+}
+#links a img
+{
+	transition:0.5s;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	-o-transition:0.5s;
+}
+#location
+{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+#country
+{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+}
+#theme
+{
+	height: 50px;
+	width: 150px;
+	border-radius: 10px;
+	background: none;
+	outline: none;
+	border: 1px solid #FFFFFF;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 18px;
+}
+#theme:hover
+{
+	transition:0.5s;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	-o-transition:0.5s;
+	background: #FFFFFF;
+	color: #000000;
+}
